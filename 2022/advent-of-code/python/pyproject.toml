@@ -1,5 +1,4 @@
 [tool.poetry]
-# distribution name
 name="advent-of-code-2022-solutions"
 version="0.1.0"
 description="Code related to the advent of code programming tasks for 2022."

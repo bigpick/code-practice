@@ -10,4 +10,4 @@
 
 ----
 
-[Advent of Code 2022]: (2022/advent-of-code/README.md)
+[Advent of Code 2022]: <2022/advent-of-code/README.md>

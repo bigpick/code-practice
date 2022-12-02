@@ -75,7 +75,7 @@ class FixedRPSGame:
         needed_matchup = [
             k
             for k in rps_outcomes.keys()
-            if k.startswith(self.p1) and rps_outcomes[k] == expected_outcomes[self.expected_outcome]
+            if k[0] == self.p1 and rps_outcomes[k] == expected_outcomes[self.expected_outcome]
         ][0]
 
         return rps_values[needed_matchup[1]] + rps_values[expected_outcomes[self.expected_outcome]]

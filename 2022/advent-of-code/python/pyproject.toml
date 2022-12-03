@@ -48,6 +48,7 @@ extend-exclude = '''
 run-all-days = "aoc.advent_of_code:main"
 day1 = "aoc.day01:main"
 day2 = "aoc.day02:main"
+day3 = "aoc.day03:main"
 
 [tool.pyright]
 reportMissingImports = true

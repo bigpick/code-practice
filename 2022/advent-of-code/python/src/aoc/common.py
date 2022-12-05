@@ -12,4 +12,4 @@ def show_current_day(fname: str):
 
 def load_input(day: int) -> str:
     with open(pathjoin("src", "aoc", "inputs", f"day_{day:02}.txt"), "r") as infile:
-        return infile.read().strip()
+        return infile.read().rstrip()

@@ -2,10 +2,11 @@
 
 """Solution for https://adventofcode.com/2022/day/5.
 
-P1:
-in the given input (elves distinguished by empty newlines)
+P1: Find the top most items in order after rearranging the columns with
+the crane (FIFO).
 
-P2:
+P2: Find the top most items in order after rearranging the columns with
+the crane, except now the crane picks up whole stacks in same order.
 """
 
 from aoc.common import load_input, show_current_day

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 TESTS_INPUT = [
-    ([1,1,2], 2, [1,2]),
-    ([0,0,1,1,1,2,2,3,3,4], 5, [0, 1, 2, 3, 4])
+    ([1, 1, 2], 2, [1, 2]),
+    ([0, 0, 1, 1, 1, 2, 2, 3, 3, 4], 5, [0, 1, 2, 3, 4]),
 ]
 
 
@@ -13,13 +13,13 @@ class Solution:
         # relative order of the elements should be kept the same. Then return the
         # number of unique elements in nums.
         last_seen = None
-        idx = len(nums)-1
+        idx = len(nums) - 1
 
         while idx >= 0:
             current = nums[idx]
             if current == last_seen:
                 nums.pop(idx)
-            idx-=1
+            idx -= 1
             last_seen = current
         return len(nums)
 

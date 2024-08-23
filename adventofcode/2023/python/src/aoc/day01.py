@@ -36,9 +36,10 @@ NUM_MAP = {
     "nine": "9",
 }
 
+
 def replace_digit_words(line: str) -> str:
-    for k,v in NUM_MAP.items():
-        line = sub(k, k[0]+v+k[-1], line)
+    for k, v in NUM_MAP.items():
+        line = sub(k, k[0] + v + k[-1], line)
     return line
 
 

@@ -7,7 +7,7 @@
 #
 #  Follow-up: Could you solve the problem in linear time and in O(1) space?
 
-TEST_CASES = [([3, 2, 3], 3), ([2, 2, 1, 1, 1, 2, 2], 2), ([3,3,4], 3)]
+TEST_CASES = [([3, 2, 3], 3), ([2, 2, 1, 1, 1, 2, 2], 2), ([3, 3, 4], 3)]
 
 
 class Solution:

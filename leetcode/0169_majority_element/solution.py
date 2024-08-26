@@ -7,7 +7,7 @@
 #
 #  Follow-up: Could you solve the problem in linear time and in O(1) space?
 
-TEST_CASES = [([3, 2, 3], 3), ([2, 2, 1, 1, 1, 2, 2], 2)]
+TEST_CASES = [([3, 2, 3], 3), ([2, 2, 1, 1, 1, 2, 2], 2), ([3,3,4], 3)]
 
 
 class Solution:
@@ -36,6 +36,8 @@ class Solution:
 
             if num != current_item:
                 current_count -= 1
+            else:
+                current_count += 1
 
             if current_count == 0:
                 current_item = num

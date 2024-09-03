@@ -6,11 +6,8 @@
 #
 # Return the merged string.
 
-TEST_CASES=[
-        ("abc", "pqr", "apbqcr"),
-        ("ab", "pqrs", "apbqrs"),
-        ("abcd", "pq", "apbqcd")
-]
+TEST_CASES = [("abc", "pqr", "apbqcr"), ("ab", "pqrs", "apbqrs"), ("abcd", "pq", "apbqcd")]
+
 
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
@@ -28,9 +25,9 @@ class Solution:
             return new
 
         if word1_size > word2_size:
-            return new + word1[i+1:]
+            return new + word1[i + 1 :]
 
-        return new + word2[i+1:]
+        return new + word2[i + 1 :]
 
 
 for test_case in TEST_CASES:

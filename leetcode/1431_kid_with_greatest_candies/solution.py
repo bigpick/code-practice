@@ -10,11 +10,12 @@
 #
 # Note that multiple kids can have the greatest number of candies.
 
-TEST_CASES=[
-        ([2,3,5,1,3], 3, [True, True, True, False, True]),
-        ([4,2,1,1,2], 1, [True, False, False, False, False]),
-        ([12,1,12], 10, [True, False, True])
+TEST_CASES = [
+    ([2, 3, 5, 1, 3], 3, [True, True, True, False, True]),
+    ([4, 2, 1, 1, 2], 1, [True, False, False, False, False]),
+    ([12, 1, 12], 10, [True, False, True]),
 ]
+
 
 class Solution:
     def kidsWithCandies(self, candies: list[int], extraCandies: int) -> list[bool]:
@@ -25,6 +26,7 @@ class Solution:
                 results[idx] = True
 
         return results
+
 
 for test_case in TEST_CASES:
     print(Solution().kidsWithCandies(test_case[0], test_case[1]))

@@ -5,8 +5,8 @@
 TEST_CASES = [
     ([1, 0, 0, 0, 1, 0, 0, 1], 2, True),
     ([1, 0, 0, 1, 0, 1], 2, False),
-    ([0,1,0,0,1,0,0,1], 2, True),
-    ([0,0,0], 2, True),
+    ([0, 1, 0, 0, 1, 0, 0, 1], 2, True),
+    ([0, 0, 0], 2, True),
 ]
 
 
@@ -14,13 +14,13 @@ class Solution:
     def kLengthApart(self, nums: list[int], k: int) -> bool:
         current = 0
 
-        while nums[current] != 1 and current < len(nums)-1:
+        while nums[current] != 1 and current < len(nums) - 1:
             current += 1
 
         if current == len(nums):
             return True
 
-        next_ = current+1
+        next_ = current + 1
         while next_ < len(nums):
             if nums[next_] == 1:
                 if next_ - current <= k:
@@ -29,8 +29,8 @@ class Solution:
 
             next_ += 1
 
-
         return True
+
 
 for test_case in TEST_CASES:
     assert Solution().kLengthApart(test_case[0], test_case[1]) == test_case[2]

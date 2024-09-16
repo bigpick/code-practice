@@ -17,7 +17,7 @@ class Solution:
             if n in {1, 2}:
                 return n
 
-            return climb_stair(n-1)+climb_stair(n-2)
+            return climb_stair(n - 1) + climb_stair(n - 2)
 
         return climb_stair(n)
 

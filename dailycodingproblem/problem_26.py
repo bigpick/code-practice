@@ -18,10 +18,6 @@ class Node:
         self.next = next
 
     def __str__(self) -> str:
-        #if self.next:
-            #return f"Node({self.val}) (next->{str(self.next)})"
-        #    return f"Node({self.val}) (next->{str(self.next)})"
-
         return f"Node({self.val})"
 
     def __repr__(self) -> str:
@@ -44,18 +40,15 @@ class LinkedList:
         current_node.next = node
         self.size += 1
 
-    def __str__(self) -> str:
-        return f"LinkedList({str(self.head)})"
-
-    def __repr__(self) -> str:
-        return f"LinkedList({str(self.head)})"
-
     @staticmethod
     def from_seq(seq: Sequence[int]) -> LinkedList:
         ll = LinkedList()
         for i in seq:
             ll.add_node(Node(i))
         return ll
+
+    def __repr__(self) -> str:
+        return str(self)
 
     def __str__(self) -> str:
         curr = self.head

@@ -12,6 +12,7 @@ from __future__ import annotations
 from typing import Optional, Sequence
 from random import randint
 
+
 class Node:
     def __init__(self, val: int, next: Optional[Node] = None) -> None:
         self.val = val
@@ -22,6 +23,7 @@ class Node:
 
     def __repr__(self) -> str:
         return f"Node({self.val}, next={self.next})"
+
 
 class LinkedList:
     def __init__(self, root: Optional[Node] = None) -> None:
@@ -59,7 +61,7 @@ class LinkedList:
         while curr.next is not None:
             s += f" -> {curr.next}"
             curr = curr.next
-        return s+")"
+        return s + ")"
 
 
 def remove_kth_last(ll: LinkedList, k: int) -> None:
@@ -76,8 +78,9 @@ def remove_kth_last(ll: LinkedList, k: int) -> None:
 
     before_k_node.next = before_k_node.next.next
 
+
 for ll_size in range(2, 10):
-    kth_from_last = randint(1, ll_size-1)
+    kth_from_last = randint(1, ll_size - 1)
 
     ll = LinkedList.from_seq(range(ll_size))
     print(f"====== Removing {kth_from_last}th from last element ==== ")
@@ -109,4 +112,3 @@ for ll_size in range(2, 10):
 # ====== Removing 3th from last element ====
 # Before: LinkedList(Node(0) -> Node(1) -> Node(2) -> Node(3) -> Node(4) -> Node(5) -> Node(6) -> Node(7) -> Node(8))
 # After: LinkedList(Node(0) -> Node(1) -> Node(2) -> Node(3) -> Node(4) -> Node(5) -> Node(7) -> Node(8))
-

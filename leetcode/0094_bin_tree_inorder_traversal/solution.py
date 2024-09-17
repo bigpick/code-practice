@@ -7,7 +7,7 @@ from typing import Optional
 # Given the root of a binary tree, return the inorder traversal of its nodes' values.
 
 TEST_CASES = [
-    ([1, None, 2, 3], [1, 3, 4]),
+    ([1, None, 2, 3], [1, 3, 2]),
     ([1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9], [4, 2, 6, 5, 7, 1, 3, 9, 8]),
     ([], []),
     ([1], [1]),
@@ -55,11 +55,19 @@ def tree_from_list(root_list: list[int]) -> Optional[TreeNode]:
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> list[int]:
-        print_bin_tree(tree_from_list(root))
-        ans = []
+        def traverse_tree(node: Optional[TreeNode], seen=[]):
+            if node is None:
+                return []
 
-        return ans
+            traverse_tree(node.left)
+            seen.append(node.val)
+            traverse_tree(node.right)
+
+            return seen
+
+        return traverse_tree(tree_from_list(root))
 
 
 for test_case in TEST_CASES:
+    print(Solution().inorderTraversal(test_case[0]))
     assert Solution().inorderTraversal(test_case[0]) == test_case[1]

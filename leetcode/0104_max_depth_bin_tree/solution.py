@@ -8,7 +8,6 @@
 
 from typing import Optional
 
-
 TEST_CASES = [([3, 9, 20, None, None, 15, 7], 3), ([1, None, 2], 2)]
 
 

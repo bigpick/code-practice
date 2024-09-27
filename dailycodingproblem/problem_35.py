@@ -22,6 +22,19 @@ TEST_CASES = [
 ]
 
 
+def testerrrr(size: int) -> None:
+    from copy import deepcopy
+    from random import shuffle
+
+    ans = (["R"] * (size//3)) + (["G"] *(size//3))+ (["B"] * (size//3))
+    chall = deepcopy(ans)
+
+    for _ in range(10):
+        shuffle(chall)
+
+    return chall, ans
+
+
 def solution(l: list[str]) -> None:
     current = left = 0
     right = len(l) - 1
@@ -60,7 +73,23 @@ def solution(l: list[str]) -> None:
     return l
 
 
-for case in TEST_CASES:
-    solution(case[0])
-    print(case[0])
-    assert case[0] == case[1]
+from time import perf_counter
+for size in (100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000):
+    chall, ans = testerrrr(size)
+    start = perf_counter()
+    solution(chall)
+    print(f"{size} took {perf_counter() - start }")
+    assert chall == ans
+
+#for case in TEST_CASES:
+#    #for size in (100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000):
+#    for size in (100, 1_000, 10_000, 100_000): # 1_000_000, 10_000_000):
+#        chall, ans = testerrrr(size)
+#        start = perf_counter()
+#        solution(chall)
+#        print(f"{size} took {perf_counter() - start }")
+#        assert chall == ans
+#
+#    #solution(case[0])
+#    #print(case[0])
+#    #assert case[0] == case[1]

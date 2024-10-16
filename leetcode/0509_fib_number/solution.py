@@ -8,6 +8,7 @@
 #   F(n) = F(n - 1) + F(n - 2), for n > 1
 #
 # Given n, calculate F(n).
+from typing import Optional
 
 TEST_CASES = [(2, 1), (3, 2), (4, 3)]
 
@@ -19,7 +20,9 @@ class Solution:
 
         return self.fib(n - 1) + self.fib(n - 2)
 
-    def fib_with_memo(self, n: int, vals: dict[int, int] = {}) -> int:
+    def fib_with_memo(self, n: int, vals: Optional[dict[int, int]] = None) -> int:
+        if vals is None:
+            vals = {}
         if n in vals:
             return vals[n]
 

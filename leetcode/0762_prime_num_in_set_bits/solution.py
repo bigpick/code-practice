@@ -17,11 +17,7 @@ class Solution:
             if num == 0 or num == 1:
                 return False
 
-            for maybe_factor in range(2, int(num**0.5) + 1):
-                if num % maybe_factor == 0:
-                    return False
-
-            return True
+            return all(num % maybe_factor != 0 for maybe_factor in range(2, int(num**0.5) + 1))
 
         set_bits = 0
         for num in range(left, right + 1):

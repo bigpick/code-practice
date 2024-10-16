@@ -55,7 +55,9 @@ def tree_from_list(root_list: list[int]) -> Optional[TreeNode]:
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> list[int]:
-        def traverse_tree(node: Optional[TreeNode], seen=[]):
+        def traverse_tree(node: Optional[TreeNode], seen=None):
+            if seen is None:
+                seen = []
             if node is None:
                 return []
 

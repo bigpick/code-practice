@@ -21,11 +21,7 @@ class Solution:
     def isAcronym(self, words: list[str], s: str) -> bool:
         if len(words) != len(s):
             return False
-        for idx, val in enumerate(words):
-            if s[idx] != val[0]:
-                return False
-
-        return True
+        return all(s[idx] == val[0] for idx, val in enumerate(words))
 
 
 for test_case in TEST_CASES:

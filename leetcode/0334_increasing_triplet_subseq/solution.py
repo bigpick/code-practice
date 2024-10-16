@@ -19,11 +19,9 @@ class Solution:
             return False
 
         low = nums[0]
-        consec = 1
         for val in nums:
             if val < low:
                 low = val
-                consec = 1
             elif val > low:
                 conseq += 1
         return False

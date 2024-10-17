@@ -12,7 +12,7 @@ class Solution:
             if c in ascii_uppercase:
                 cap += 1
 
-        return cap == 0 or cap == len(word) or cap == 1 or False
+        return cap == 0 or cap == len(word) or (cap == 1 and word[0] in ascii_uppercase) or False
 
 
 for test_case in TEST_CASES:

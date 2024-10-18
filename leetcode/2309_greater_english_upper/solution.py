@@ -40,4 +40,3 @@ class Solution:
 
 for test_case in TEST_CASES:
     print(Solution().greatestLetter(test_case[0]))
-    # assert Solution().greatestLetter(test_case[0]) == test_case[1]

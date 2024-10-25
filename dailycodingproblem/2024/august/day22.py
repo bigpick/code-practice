@@ -5,7 +5,6 @@
 
 from typing import Optional
 
-
 TEST_PAIRS = [
     ([10, 15, 3, 7], 17, True),
     ([10, 15, 3, 7], 19, False),
@@ -27,7 +26,7 @@ def any_two(input_list: list[int], k: int) -> bool:
     seen = {}
     for idx, item in enumerate(input_list):
         complement = k - item
-        if seen.get(complement, None) is not None:
+        if seen.get(complement) is not None:
             return True
 
         seen[item] = idx
@@ -39,7 +38,7 @@ def any_two_idxs(input_list: list[int], k: int) -> tuple[Optional[int], Optional
     seen = {}
     for idx, item in enumerate(input_list):
         complement = k - item
-        if (complement_idx := seen.get(complement, None)) is not None:
+        if (complement_idx := seen.get(complement)) is not None:
             return complement_idx, idx
 
         seen[item] = idx

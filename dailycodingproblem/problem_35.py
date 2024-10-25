@@ -26,7 +26,7 @@ def testerrrr(size: int) -> None:
     from copy import deepcopy
     from random import shuffle
 
-    ans = (["R"] * (size//3)) + (["G"] *(size//3))+ (["B"] * (size//3))
+    ans = (["R"] * (size // 3)) + (["G"] * (size // 3)) + (["B"] * (size // 3))
     chall = deepcopy(ans)
 
     for _ in range(10):
@@ -74,6 +74,7 @@ def solution(l: list[str]) -> None:
 
 
 from time import perf_counter
+
 for size in (100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000):
     chall, ans = testerrrr(size)
     start = perf_counter()
@@ -81,7 +82,7 @@ for size in (100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000):
     print(f"{size} took {perf_counter() - start }")
     assert chall == ans
 
-#for case in TEST_CASES:
+# for case in TEST_CASES:
 #    #for size in (100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000):
 #    for size in (100, 1_000, 10_000, 100_000): # 1_000_000, 10_000_000):
 #        chall, ans = testerrrr(size)

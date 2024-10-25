@@ -9,8 +9,8 @@
 
 from __future__ import annotations
 
-from typing import Optional, Sequence
 from random import randint
+from typing import Optional, Sequence
 
 
 class Node:

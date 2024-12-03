@@ -1,0 +1,35 @@
+[tool.poetry]
+name="advent-of-code-2024-solutions"
+version="0.1.0"
+description="Code related to the advent of code programming tasks for 2024."
+authors=["George Pickering <bigpick>"]
+packages=[ { include="aoc", from="src" } ]
+include=[ { path = "src", format = "sdist" } ]
+exclude = ["**/test/*"]
+
+[tool.poetry.dev-dependencies]
+pylint = "*"
+ruff = "0.8.0"
+pytest = "*"
+pytest-cov = "*"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = '--cov-report term-missing --cov=aoc -s'
+python_files = "*test*.py"
+# markers = [
+#     "integration: marks tests that have external dependencies (deselect with \"-m 'not integration'\")",
+# ]
+log_cli = true
+log_cli_level = "DEBUG"
+
+[tool.poetry.scripts]
+run-all-days = "aoc.advent_of_code:main"
+day1 = "aoc.day01:main"
+day2 = "aoc.day02:main"

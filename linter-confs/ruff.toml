@@ -6,11 +6,12 @@ indent-width = 4
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
 # Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
 # McCabe complexity (`C901`) by default
-select = ["E", "F", "W", "I", "N", "UP", "ANN", "Q", "RUF", "ASYNC", "S", "B", "A", "C4", "T20", "SIM"]
+select = ["D", "E", "F", "W", "I", "N", "UP", "ANN", "Q", "RUF", "ASYNC", "S", "B", "A", "C4", "T20", "SIM"]
 
 ignore = [
-  "ANN101", # Missing type annotation for {name} in method
-  "ANN102", # Missing type annotation for {name} in classmethod
+  "E741",   # bad var names
+  "D103",   # docstrings
+  "T201",   # print statements
   "ANN202", # Missing return type annotation for private function {name}
   "ANN204", # Missing return type annotation for special method
   "ANN206", # Missing return type annotation for classmethod {name}
@@ -21,10 +22,7 @@ ignore = [
   "D412",   # No blank lines allowed between a section header and its content ("{name}")
   "RUF010",
   "UP006",
-  "UP007",
-  "S101", # leetcode
-  "N802", # leetcode
-  "T201", # leetcode
+  "UP007"
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.

@@ -5,11 +5,8 @@
 
 from time import perf_counter
 
-TEST_CASES = [
-    (11, 3),
-    (128, 1),
-    (2147483645, 30)
-]
+TEST_CASES = [(11, 3), (128, 1), (2147483645, 30)]
+
 
 class Solution:
     def hammingWeight(self, n: int) -> int:
@@ -19,10 +16,11 @@ class Solution:
     def hammingWeightBitwise(self, n: int) -> int:
         one_bits = 0
         while n:
-            if n&1:
+            if n & 1:
                 one_bits += 1
             n = n >> 1
         return one_bits
+
 
 for test_case in TEST_CASES:
     assert Solution().hammingWeight(test_case[0]) == test_case[1]

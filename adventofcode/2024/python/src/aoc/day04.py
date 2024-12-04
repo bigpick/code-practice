@@ -100,7 +100,6 @@ def solve_part_one(inp: str, words: list[str]) -> int:
 
         for yy in range(height):
             for xx in range(width + 1):
-                print("??????? ", x)
                 for direction in Directions:
                     valid, coords = search_direction(yy, xx, word, lines, direction)
                     if valid:

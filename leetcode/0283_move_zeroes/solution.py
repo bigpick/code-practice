@@ -15,9 +15,7 @@ TEST_CASES = [
 
 class Solution:
     def moveZeroes(self, nums: list[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
+        """Do not return anything, modify nums in-place instead."""
         left = right = 0
         while left < len(nums) - 1:
             if nums[left] == 0:

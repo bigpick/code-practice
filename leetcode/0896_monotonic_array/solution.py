@@ -31,7 +31,7 @@ class Solution:
         mono = "dec" if first > last else "inc"
 
         for val in nums[next_ + 1 :]:
-            if val > last and mono == "dec" or val < last and mono == "inc":
+            if (val > last and mono == "dec") or (val < last and mono == "inc"):
                 return False
 
             last = val

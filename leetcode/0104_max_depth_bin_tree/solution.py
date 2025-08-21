@@ -24,7 +24,7 @@ class TreeNode:
 
 
 def print_bin_tree(tree: "TreeNode", level: int = 0, prefix: str = "root") -> None:
-    print(f"{level*' '}{prefix:5s}: val={tree.val}")
+    print(f"{level * ' '}{prefix:5s}: val={tree.val}")
     if tree.left:
         print_bin_tree(tree.left, level + 1, "left")
     if tree.right:
